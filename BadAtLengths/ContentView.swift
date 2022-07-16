@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  BadAtLengths
 //
-//  Created by Admin on 16/07/22.
+//  Created by Saurabh Jamadagni on 16/07/22.
 //
 
 import SwiftUI
@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var enteredValue = 0.0
     @State private var inputUnit = "m"
     @State private var outputUnit = "km"
+    @FocusState private var isEnteringValue: Bool
     
     let units = ["m", "km", "ft", "yds", "miles"]
     
@@ -49,8 +50,49 @@ struct ContentView: View {
     }
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            Form {
+                Section {
+                    TextField("Enter value", value: $enteredValue, format: .number)
+                        .keyboardType(.decimalPad)
+                        .focused($isEnteringValue)
+                    Picker("Select input unit", selection: $inputUnit) {
+                        ForEach(units, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
+                
+                Section {
+                    Picker("Select input unit", selection: $outputUnit) {
+                        ForEach(units, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .keyboardType(.decimalPad)
+                } header: {
+                    Text("Select Output unit")
+                }
+                
+                Section {
+                    Text("\(enteredValue.formatted(.number)) \(inputUnit) = \(convertedValue.formatted(.number)) \(outputUnit)")
+                } header: {
+                    Text("Conversion")
+                }
+            }
+            .navigationTitle("Bad At Lengths!")
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    
+                    Button("Done") {
+                        isEnteringValue = false
+                    }
+                }
+            }
+        }
     }
 }
 
