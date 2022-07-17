@@ -17,13 +17,7 @@ This is a challenge Project for [day 19](https://www.hackingwithswift.com/100/sw
 - The units options come from the array `["m", "km", "ft", "yds", "miles"]`.
 - The user can choose any input unit. The entered data will always be converted to metres first and then to the required unit for the simplicity of calculations.
 
-<!-- blank line -->
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="https://github.com/SaurabhJamadagni/bad-at-lengths/blob/dca5d52385b9e2a97b29693d5e391593e480ae6b/Media/PreviewPoster.png">
-    <source src="https://github.com/SaurabhJamadagni/bad-at-lengths/blob/dca5d52385b9e2a97b29693d5e391593e480ae6b/Media/BadAtLengthsPreview.mov" type="video/mov">
-  </video>
-</figure>
-<!-- blank line -->
+![App Demonstration Gif](Media/BadAtLengthsPreview.gif)
 
 ## Learnings
 
