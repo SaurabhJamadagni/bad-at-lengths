@@ -12,7 +12,7 @@ This is a challenge Project for [day 19](https://www.hackingwithswift.com/100/sw
 
 - The app can be broken down into 3 sections.
   1. This section takes the input value and unit from the user. The TextField uses a decimal keypad and the unit is selected using a segmented picker.
-  2. The second section let's the user choose the unit they would like to convert their input to. This is also a segmented picker.
+  2. The second section lets the user choose the unit they would like to convert their input to. This is also a segmented picker.
   3. The third section shows the conversion output.
 - The units options come from the array `["m", "km", "ft", "yds", "miles"]`.
 - The user can choose any input unit. The entered data will always be converted to metres first and then to the required unit for the simplicity of calculations.
